@@ -18,7 +18,7 @@ pipeline {
     stages {
         stage('Checkout git') {
             steps {
-              git 'https://github.com/praveensirvi1212/medicure-project.git'
+              git 'https://github.com/umahanty/medi-app.git'
             }
         }
         
@@ -32,9 +32,9 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-cred', passwordVariable: 'password', usernameVariable: 'username')]) {
                     
-                    sh 'docker build -t praveensirvi/medicure:v1 .'
+                    sh 'docker build -t umahanty/medicure:v1 .'
                     sh "docker login -u ${username} -p ${password} "
-                    sh 'docker push praveensirvi/medicure:v1'
+                    sh 'docker push umahanty/medicure:v1'
                     
                     
                 }

@@ -1,10 +1,13 @@
-package com.project.staragile;
+package com.project.mentorbabaa;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.project.mentorbabaa.Doctor;
+import com.project.mentorbabaa.MedicureService;
 
 @SpringBootTest
 public class TestMedicureService {

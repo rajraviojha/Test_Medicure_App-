@@ -1,4 +1,4 @@
-
+//medicure
 module "aws_eks_cluster" {
 
    source = "./modules/aws_eks"

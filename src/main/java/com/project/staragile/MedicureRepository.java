@@ -1,4 +1,4 @@
-package com.project.staragile;
+package com.project.mentorbabaa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

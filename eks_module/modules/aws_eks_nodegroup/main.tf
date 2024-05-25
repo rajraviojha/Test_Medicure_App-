@@ -94,7 +94,7 @@ resource "aws_iam_role_policy_attachment" "amazon_eks_cni_policy_general" {
   # The ARN of the policy you want to apply.
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
 
-  # The role the policy should be applied to
+  
   role = aws_iam_role.nodes_general.name
 }
 

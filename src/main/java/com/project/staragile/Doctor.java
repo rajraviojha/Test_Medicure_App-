@@ -1,4 +1,4 @@
-package com.project.staragile;
+package com.project.mentorbabaa;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
