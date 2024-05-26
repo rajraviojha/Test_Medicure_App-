@@ -14,6 +14,6 @@ spec:
 
       containers:
       - name: Medicure_App
-        image: jharajltp/Java-app:tagname
+        image: jharajltp/java-app:latest
         ports:
         - containerPort: 8082

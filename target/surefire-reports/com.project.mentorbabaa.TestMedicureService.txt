@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.project.mentorbabaa.TestMedicureService
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.project.mentorbabaa.TestMedicureService
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! - in com.project.mentorbabaa.TestMedicureService
+testRegisterDoctor  Time elapsed: 0.01 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Doctor Registration ID should be 'dummyId' ==> expected: <dummyId> but was: <MP1110>
+	at com.project.mentorbabaa.TestMedicureService.testRegisterDoctor(TestMedicureService.java:28)
+

@@ -29,7 +29,7 @@
       command: "minikube start"
 
     - name: deploy pull
-      command: docker pull jharajltp/Java.app:latest
+      command: docker pull java-app:latest
 
     - name: Apply Kubernetes Deployment
       command: "kubectl apply -f deployment.yaml"
