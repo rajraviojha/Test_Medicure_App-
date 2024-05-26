@@ -1,0 +1,38 @@
+- hosts: prod-server
+  become: true
+  tasks:
+    - name: update cache
+      apt:
+        update_cache: yes
+
+    - name: install docker
+      apt:
+        pkg: docker.io
+        state: latest
+
+    - name: start docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Download Minikube binary
+      command: "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64"
+
+    - name: Move Minikube binary
+      command: "mv minikube-linux-amd64 minikube"
+
+    - name: Install Minikube
+      command: "sudo install minikube /usr/local/bin/"
+
+    - name: Start Minikube
+      command: "minikube start"
+
+    - name: deploy pull
+      command: docker pull jharajltp/Java.app:latest
+
+    - name: Apply Kubernetes Deployment
+      command: "kubectl apply -f deployment.yaml"
+
+    - name: Prometheus Node Exporter run
+      command: docker run -d -p 9100:9100 prom/node-exporter

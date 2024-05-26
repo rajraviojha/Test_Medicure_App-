@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Medicure_App
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: Medicure_App
+  template:
+    metadata:
+      labels:
+        app: Medicure_App
+
+      containers:
+      - name: Medicure_App
+        image: jharajltp/Java-app:tagname
+        ports:
+        - containerPort: 8082
