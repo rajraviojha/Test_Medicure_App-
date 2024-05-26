@@ -1,0 +1,24 @@
+- hosts: prod-server
+  become: true
+  tasks:
+    - name: update cache
+      apt:
+        update_cache: yes
+
+    - name: install docker
+      apt:
+        pkg: docker.io
+        state: latest
+
+    - name: start docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: deploy app
+      command: docker run -d -p 5000:5000 jharajltp/flask-app:latest
+	  
+    - name: Prometheus Node Exporter run
+      command: docker run -d -p 9100:9100  prom/node-exporter
+		
